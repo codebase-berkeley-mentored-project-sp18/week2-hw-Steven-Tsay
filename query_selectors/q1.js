@@ -20,12 +20,9 @@ function getElementsByClassName(strClassName) {
     if (node.getElementsByClassName == strClassName){
       elements.append(node);
     }
-      document.write(node.hasChildNodes());
+      
       if (node.hasChildNodes()) {
-
-
       var children = node.childNodes;
-
       for (var i = 0; i < children.length; i++) {
         helper(children[i], elements);
 
