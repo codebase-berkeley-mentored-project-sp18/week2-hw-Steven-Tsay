@@ -21,7 +21,10 @@ addMessage("Player " + player + " it is your turn!", "standard");
 // -----------------------------------------------------------------
 
 // TODO: add the setSpot function to be the event to each "spot"
-
+var ids = document.getElementsByClassName(spot);
+for (i=0 i<ids.length i++){
+	ids[i].addEventListener(“click”, setspot(ids[i].id))
+}
 
 // -----------------------------------------------------------------
 // DOM Interaction
@@ -30,7 +33,7 @@ addMessage("Player " + player + " it is your turn!", "standard");
 /* Upon receiving a valid selection this function
    adds the piece to the JavaScript board and the
    HTML board */
-function setSpot() {
+function setSpot(id) {
 	// TODO: assign id to be the id of the element that got selected
 	var row = getRow(id);
 	var col = getCol(id);
@@ -38,7 +41,7 @@ function setSpot() {
 	if (board[row][col] === '-') {
 		board[row][col] = player;
 		// TODO: add the player to the HTML board too (this is not the same as the 2D array)
-		
+
 		validInput = true;
 		moves += 1;
 		player = switchPlayer();
@@ -79,10 +82,10 @@ function isWinner() {
 	for (var row = 0; row < 3; row++) {
 		if (board[row][0] != "-" && board[row][0] === board[row][1] && board[row][0] === board[row][2]) {
 			return true;
-		} 
+		}
 	}
 
-	// checks the cols 
+	// checks the cols
 	for (var col = 0; col < 3; col++) {
 		if (board[0][col] != "-" && board[0][col] === board[1][col] && board[0][col] === board[2][col]) {
 			return true;
@@ -103,15 +106,10 @@ function isWinner() {
 
 function getRow(id) {
 	// TODO: given the id (a string, return the row)
+	return id[0];
 }
 
 function getCol(id) {
 	// TODO: given the id (a string, return the col)
+	return id[1];
 }
-
-
-
-
-
-
-
