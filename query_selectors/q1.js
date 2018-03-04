@@ -12,9 +12,36 @@ You can test your function by opening index.html in your browser and viewing the
 
 function getElementsByClassName(strClassName) {
   //=====================
+  var elements = [];
+
+  helper(document.body , elements);
+  return elements;
+  function helper(node, listofclasses){
+    if (node.getElementsByClassName == strClassName){
+      elements.append(node);
+    }
+      document.write(node.hasChildNodes());
+      if (node.hasChildNodes()) {
+
+
+      var children = node.childNodes;
+
+      for (var i = 0; i < children.length; i++) {
+        helper(children[i], elements);
+
+      }
+    }
+
+
+  }
+
+
+
+
+
   // YOUR CODE HERE
   //=====================
-  return;
+
 }
 
 
