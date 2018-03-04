@@ -21,10 +21,6 @@ addMessage("Player " + player + " it is your turn!", "standard");
 // -----------------------------------------------------------------
 
 // TODO: add the setSpot function to be the event to each "spot"
-var ids = document.getElementsByClassName(spot);
-for (i=0 i<ids.length i++){
-	ids[i].addEventListener(“click”, setspot(ids[i].id))
-}
 
 // -----------------------------------------------------------------
 // DOM Interaction
@@ -33,8 +29,9 @@ for (i=0 i<ids.length i++){
 /* Upon receiving a valid selection this function
    adds the piece to the JavaScript board and the
    HTML board */
-function setSpot(id) {
+function setSpot() {
 	// TODO: assign id to be the id of the element that got selected
+	var id = this.id
 	var row = getRow(id);
 	var col = getCol(id);
 
@@ -62,6 +59,26 @@ function setSpot(id) {
 function addMessage(message, c) {
 	// change the message and assign the class c to the message paragraph
 }
+
+
+
+var clickHandler = function(e) { alert("You clicked on the page!!!"); };
+
+function testfunc(){
+	var id = this.id
+	var row = getRow(id);
+	var col = getCol(id);
+	alert("You clicked on the page!!!"+col+row);
+
+}
+
+
+var ids = document.getElementsByClassName("spot");
+for (i=0 ; i<ids.length ; i++){
+	ids[i].addEventListener("click", testfunc);
+}
+
+
 
 
 
@@ -106,10 +123,10 @@ function isWinner() {
 
 function getRow(id) {
 	// TODO: given the id (a string, return the row)
-	return id[0];
+	return parseInt(id[0]);
 }
 
 function getCol(id) {
 	// TODO: given the id (a string, return the col)
-	return id[1];
+	return parseInt(id[1]);
 }
