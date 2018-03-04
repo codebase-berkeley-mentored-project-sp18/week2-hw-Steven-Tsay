@@ -29,6 +29,15 @@ addMessage("Player " + player + " it is your turn!", "standard");
 /* Upon receiving a valid selection this function
    adds the piece to the JavaScript board and the
    HTML board */
+
+function removeLs(){
+
+	var ids = document.getElementsByClassName("spot");
+	for (i=0 ; i<ids.length ; i++){
+		ids[i].removeEventListener("click", setSpot);
+	}
+}
+
 function setSpot() {
 	// TODO: assign id to be the id of the element that got selected
 	var id = this.id
@@ -64,7 +73,7 @@ function setSpot() {
 
 		if (winner) {
 			addMessage("Congratulations, " + switchPlayer() + " you won!", "endgame");
-			// TODO: remove the event listener from every spot
+			removeLs();// TODO: remove the event listener from every spot
 		} else if (moves === 9) {
 			addMessage("You both suck, it's a tie!", "endgame");
 		}
@@ -72,7 +81,15 @@ function setSpot() {
 }
 
 function addMessage(message, c) {
-	// change the message and assign the class c to the message paragraph
+	var mess = document.getElementById("message");;
+	 mess.innerHTML = message;
+
+	mess.style.fontsize ="20px"
+	if (c == "endgame"){
+		mess.style.fontSize = "50px";
+		mess.style.color = "blue";
+
+	}
 }
 
 
