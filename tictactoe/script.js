@@ -37,7 +37,22 @@ function setSpot() {
 
 	if (board[row][col] === '-') {
 		board[row][col] = player;
+
+
+
+
+
 		// TODO: add the player to the HTML board too (this is not the same as the 2D array)
+		var newParagraph = document.createElement("p");
+		newParagraph.innerHTML = player ;
+
+
+		this.appendChild(newParagraph);
+
+
+
+
+
 
 		validInput = true;
 		moves += 1;
@@ -69,13 +84,14 @@ function testfunc(){
 	var row = getRow(id);
 	var col = getCol(id);
 	alert("You clicked on the page!!!"+col+row);
+	this.stopPropagation;
 
 }
 
 
 var ids = document.getElementsByClassName("spot");
 for (i=0 ; i<ids.length ; i++){
-	ids[i].addEventListener("click", testfunc);
+	ids[i].addEventListener("click", setSpot);
 }
 
 
