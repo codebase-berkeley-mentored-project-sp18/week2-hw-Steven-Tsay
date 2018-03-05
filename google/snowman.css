@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+
+body a{
+	text-decoration: none;
+	padding: 2px;
+	border: 1px solid #e3e3e3;
+	background-color: lightgray;
+	color:black;
+	
+}
+.nav-links{
+	display: inline-block;
+	
+    
+}
+#navbar {
+	position: absolute;
+    left: 80%;
+}
+.form{
+	position:relative;
+	top:-15px;
+	border:none;
+	left:45%;
+	
+	
+	
+	
+}
+.google{
+    position:relative;
+	left:50%;
+	
+	
+}
+#google_logo{
+	position:relative;
+	left:-250px;
+	background-color:white;
+}
+.buttons{
+	position: relative;
+	left: 50%
+
+}
+#google_search{
+	position: relative;
+	left: -100px
+}
+
+#google_search a{ 
+	text-decoration: none;
+	padding: 0px;
+	border: none;
+}
+#im_feeling_lucky{
+	position: relative;
+	left: -100px
+}
+.footer-left{
+	display: inline;
+	float:left;
+}
+.footer-left li{
+	display: inline;
+	float:left;
+	padding:10px;
+
+}
+
+
+.footer-right{
+	
+	display: inline;
+	float:right;
+}
+.footer-right li{
+	display: inline;
+	float:right;
+	padding:10px;
+}
+
+
+#form-search{
+	border:none;
+	position:absolute;
+	left:-200px;
+}
+
